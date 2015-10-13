@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		34396D841BCDB7CA002B2498 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396D831BCDB7CA002B2498 /* main.m */; };
 		34396D871BCDB7CA002B2498 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396D861BCDB7CA002B2498 /* AppDelegate.m */; };
-		34396D8A1BCDB7CA002B2498 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396D891BCDB7CA002B2498 /* ViewController.m */; };
 		34396D8D1BCDB7CA002B2498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34396D8B1BCDB7CA002B2498 /* Main.storyboard */; };
 		34396D8F1BCDB7CA002B2498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34396D8E1BCDB7CA002B2498 /* Assets.xcassets */; };
 		34396D921BCDB7CA002B2498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34396D901BCDB7CA002B2498 /* LaunchScreen.storyboard */; };
 		34396D9D1BCDB7CA002B2498 /* TranceDemo2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396D9C1BCDB7CA002B2498 /* TranceDemo2Tests.m */; };
 		34396DA81BCDB7CA002B2498 /* TranceDemo2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DA71BCDB7CA002B2498 /* TranceDemo2UITests.m */; };
+		34396DB71BCDB81F002B2498 /* TRFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DB61BCDB81F002B2498 /* TRFeedViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		34396D831BCDB7CA002B2498 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34396D851BCDB7CA002B2498 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34396D861BCDB7CA002B2498 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		34396D881BCDB7CA002B2498 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		34396D891BCDB7CA002B2498 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		34396D8C1BCDB7CA002B2498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34396D8E1BCDB7CA002B2498 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34396D911BCDB7CA002B2498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		34396DA31BCDB7CA002B2498 /* TranceDemo2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranceDemo2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34396DA71BCDB7CA002B2498 /* TranceDemo2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranceDemo2UITests.m; sourceTree = "<group>"; };
 		34396DA91BCDB7CA002B2498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34396DB51BCDB81F002B2498 /* TRFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRFeedViewController.h; sourceTree = "<group>"; };
+		34396DB61BCDB81F002B2498 /* TRFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 			children = (
 				34396D851BCDB7CA002B2498 /* AppDelegate.h */,
 				34396D861BCDB7CA002B2498 /* AppDelegate.m */,
-				34396D881BCDB7CA002B2498 /* ViewController.h */,
-				34396D891BCDB7CA002B2498 /* ViewController.m */,
+				34396DB51BCDB81F002B2498 /* TRFeedViewController.h */,
+				34396DB61BCDB81F002B2498 /* TRFeedViewController.m */,
 				34396D8B1BCDB7CA002B2498 /* Main.storyboard */,
 				34396D8E1BCDB7CA002B2498 /* Assets.xcassets */,
 				34396D901BCDB7CA002B2498 /* LaunchScreen.storyboard */,
@@ -270,8 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34396D8A1BCDB7CA002B2498 /* ViewController.m in Sources */,
 				34396D871BCDB7CA002B2498 /* AppDelegate.m in Sources */,
+				34396DB71BCDB81F002B2498 /* TRFeedViewController.m in Sources */,
 				34396D841BCDB7CA002B2498 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
