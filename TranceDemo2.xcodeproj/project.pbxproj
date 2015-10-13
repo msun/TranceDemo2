@@ -16,6 +16,7 @@
 		34396DA81BCDB7CA002B2498 /* TranceDemo2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DA71BCDB7CA002B2498 /* TranceDemo2UITests.m */; };
 		34396DB71BCDB81F002B2498 /* TRFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DB61BCDB81F002B2498 /* TRFeedViewController.m */; settings = {ASSET_TAGS = (); }; };
 		34396DBA1BCDC37E002B2498 /* TRPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DB91BCDC37E002B2498 /* TRPost.m */; settings = {ASSET_TAGS = (); }; };
+		34396DBD1BCDC671002B2498 /* TRFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DBC1BCDC671002B2498 /* TRFeedCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		34396DB61BCDB81F002B2498 /* TRFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFeedViewController.m; sourceTree = "<group>"; };
 		34396DB81BCDC37E002B2498 /* TRPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRPost.h; sourceTree = "<group>"; };
 		34396DB91BCDC37E002B2498 /* TRPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRPost.m; sourceTree = "<group>"; };
+		34396DBB1BCDC671002B2498 /* TRFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRFeedCell.h; sourceTree = "<group>"; };
+		34396DBC1BCDC671002B2498 /* TRFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFeedCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 			children = (
 				34396D851BCDB7CA002B2498 /* AppDelegate.h */,
 				34396D861BCDB7CA002B2498 /* AppDelegate.m */,
+				34396DBB1BCDC671002B2498 /* TRFeedCell.h */,
+				34396DBC1BCDC671002B2498 /* TRFeedCell.m */,
 				34396DB51BCDB81F002B2498 /* TRFeedViewController.h */,
 				34396DB61BCDB81F002B2498 /* TRFeedViewController.m */,
 				34396DB81BCDC37E002B2498 /* TRPost.h */,
@@ -279,6 +284,7 @@
 				34396DB71BCDB81F002B2498 /* TRFeedViewController.m in Sources */,
 				34396D841BCDB7CA002B2498 /* main.m in Sources */,
 				34396DBA1BCDC37E002B2498 /* TRPost.m in Sources */,
+				34396DBD1BCDC671002B2498 /* TRFeedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +510,7 @@
 				34396DAE1BCDB7CA002B2498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34396DAF1BCDB7CA002B2498 /* Build configuration list for PBXNativeTarget "TranceDemo2Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +519,7 @@
 				34396DB11BCDB7CA002B2498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34396DB21BCDB7CA002B2498 /* Build configuration list for PBXNativeTarget "TranceDemo2UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +528,7 @@
 				34396DB41BCDB7CA002B2498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

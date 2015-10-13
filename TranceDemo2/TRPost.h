@@ -11,6 +11,6 @@
 @interface TRPost : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *picture;
+@property (strong, nonatomic) NSString *imageURL;
 
 @end

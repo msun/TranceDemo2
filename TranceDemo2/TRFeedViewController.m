@@ -7,6 +7,7 @@
 //
 
 #import "TRFeedViewController.h"
+#import "TRFeedCell.h"
 #import "TRPost.h"
 #import <Foundation/Foundation.h>
 
@@ -27,10 +28,10 @@
                                 NSURLResponse *response,
                                 NSError *error) {
         if (error != nil) {
-            NSLog(@"GET Request error");
+            NSLog(@"JSON GET Request error");
             return;
         } else if (data == nil) {
-            NSLog(@"No data received");
+            NSLog(@"No JSON data received");
             return;
         }
 
@@ -62,7 +63,7 @@
                     
                     id pictureObject = [jsonDictionary objectForKey:@"picture"];
                     if ([pictureObject isKindOfClass:[NSString class]]) {
-                        post.picture = pictureObject;
+                        post.imageURL = pictureObject;
                     }
                     
                     [posts addObject:post];
@@ -70,9 +71,11 @@
                     NSLog(@"It wasn't a dictionary");
                 }
             }
-            
-            self.posts = posts;
-            NSLog(@"ok");
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.posts = posts;
+                [self.tableView reloadData];
+            });
         } else {
             NSLog(@"It wasn't an array");
             return;
@@ -84,6 +87,9 @@
     [super viewDidLoad];
     
     //self.tableView.backgroundColor = [UIColor redColor];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     [self updateData];
 }
@@ -92,11 +98,36 @@
 # pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.posts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    static NSString *CellIdentifier = @"Feed Cell";
+    TRFeedCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.post = self.posts[indexPath.row];
+    cell.nameLabel.text = cell.post.name;
+
+    //cell.post.imageURL = @"http://sciactive.com/pnotify/includes/github-icon.png";
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL: [NSURL URLWithString:cell.post.imageURL]
+            completionHandler:^(NSData *data,
+                                NSURLResponse *response,
+                                NSError *error) {
+        if (error != nil) {
+            NSLog(@"Image GET Request error");
+            return;
+        } else if (data == nil) {
+            NSLog(@"No image data received");
+            return;
+        }
+
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = image;
+        });
+    }] resume];
+
+    return cell;
 }
 
 
@@ -104,7 +135,7 @@
 # pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end
