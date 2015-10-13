@@ -7,7 +7,14 @@
 //
 
 #import "TRFeedViewController.h"
+#import "TRPost.h"
 #import <Foundation/Foundation.h>
+
+@interface TRFeedViewController ()
+
+@property (strong, nonatomic) NSArray *posts;
+
+@end
 
 @implementation TRFeedViewController
 
@@ -35,9 +42,36 @@
             NSLog(@"JSON was malformed");
             return;
         }
+                
+        self.posts = nil;
 
         if([jsonObject isKindOfClass:[NSArray class]]) {
-            NSArray *results = jsonObject;
+            NSArray *jsonArray = jsonObject;
+            NSMutableArray *posts = [[NSMutableArray alloc] init];
+            
+            for (id object in jsonArray) {
+                TRPost *post = [[TRPost alloc] init];
+                
+                if ([object isKindOfClass:[NSDictionary class]]) {
+                    NSDictionary *jsonDictionary = object;
+
+                    id nameObject = [jsonDictionary objectForKey:@"name"];
+                    if ([nameObject isKindOfClass:[NSString class]]) {
+                        post.name = nameObject;
+                    }
+                    
+                    id pictureObject = [jsonDictionary objectForKey:@"picture"];
+                    if ([pictureObject isKindOfClass:[NSString class]]) {
+                        post.picture = pictureObject;
+                    }
+                    
+                    [posts addObject:post];
+                } else {
+                    NSLog(@"It wasn't a dictionary");
+                }
+            }
+            
+            self.posts = posts;
             NSLog(@"ok");
         } else {
             NSLog(@"It wasn't an array");
